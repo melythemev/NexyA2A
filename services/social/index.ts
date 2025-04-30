@@ -17,6 +17,7 @@ const http = axios.create({
   },
 });
 
+// Main service for SocialNexy API integration
 const SocialNexyService = {
   topics: {
     getTopic: async (topic: string) => {

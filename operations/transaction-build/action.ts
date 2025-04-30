@@ -41,8 +41,8 @@ export const transactionToolAction: {
     let updatedArgs = { ...args, chain };
 
     // Normalize symbols
-    let inputSymbol = updatedArgs.input_token_symbol?.toUpperCase() || "";
-    let outputSymbol = updatedArgs.output_token_symbol?.toUpperCase() || "";
+    const inputSymbol = updatedArgs.input_token_symbol?.toUpperCase() || "";
+    const outputSymbol = updatedArgs.output_token_symbol?.toUpperCase() || "";
 
     let inputInfo: Datum | null = null;
     let outputInfo: Datum | null = null;
@@ -58,16 +58,14 @@ export const transactionToolAction: {
     // 🔄 If symbols are missing but CAs exist, fetch symbol (1 call per token max)
     if (!inputSymbol && updatedArgs.input_token_ca) {
       inputInfo = await NexyService.postCoinInfo([updatedArgs.input_token_ca]);
-      inputSymbol = inputInfo?.symbol?.toUpperCase() || "";
-      updatedArgs.input_token_symbol = inputSymbol;
+      updatedArgs.input_token_symbol = inputInfo?.symbol?.toUpperCase() || "";
     }
 
     if (!outputSymbol && updatedArgs.output_token_ca) {
       outputInfo = await NexyService.postCoinInfo([
         updatedArgs.output_token_ca,
       ]);
-      outputSymbol = outputInfo?.symbol?.toUpperCase() || "";
-      updatedArgs.output_token_symbol = outputSymbol;
+      updatedArgs.output_token_symbol = outputInfo?.symbol?.toUpperCase() || "";
     }
 
     // 🔍 Search token by symbol if still missing CA

@@ -2,7 +2,6 @@ version: "3.8"
 
 services:
   nexy-mcp:
-    image: keygray1610/nexy-mcp:v0.0.1
     platform: linux/amd64
     ports:
       - "3333:3333"

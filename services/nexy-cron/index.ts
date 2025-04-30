@@ -10,6 +10,7 @@ import {
   TrendingResponse,
 } from "./type.js";
 
+// Main service for nexy-cron API integration
 const NexyService = {
   fetchWalletHoldings: async (
     address: string,

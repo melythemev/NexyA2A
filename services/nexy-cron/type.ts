@@ -1,42 +1,45 @@
+// Represents a single holding in a wallet
 export interface HoldingResponse {
-  token: Token;
-  balance: string;
-  usd_value: string;
-  realized_profit_30d: string;
-  realized_profit: string;
-  realized_pnl: string;
-  realized_pnl_30d: string;
-  unrealized_profit: string;
-  unrealized_pnl: string;
-  total_profit: string;
-  total_profit_pnl: string;
+  address: string;
   avg_cost: string;
   avg_sold: string;
+  balance: string;
   buy_30d: number;
-  sell_30d: number;
-  sells: number;
-  price: string;
   cost: string;
-  position_percent: string;
-  last_active_timestamp: number;
-  history_sold_income: string;
-  history_bought_cost: string;
-  start_holding_at: number;
   end_holding_at: number;
+  history_bought_cost: string;
+  history_sold_income: string;
+  last_active_timestamp: number;
   liquidity: string;
+  position_percent: string;
+  price: string;
+  realized_pnl: string;
+  realized_pnl_30d: string;
+  realized_profit: string;
+  realized_profit_30d: string;
+  sells: number;
+  sell_30d: number;
+  start_holding_at: number;
+  token: Token;
+  total_profit: string;
+  total_profit_pnl: string;
+  unrealized_pnl: string;
+  unrealized_profit: string;
+  usd_value: string;
   wallet_token_tags: null;
 }
 
+// Represents a token object
 interface Token {
   address: string;
-  token_address: string;
-  symbol: string;
-  name: string;
   decimals: number;
-  logo: string;
-  price_change_6h: string;
-  is_show_alert: boolean;
   is_honeypot: null;
+  is_show_alert: boolean;
+  logo: string;
+  name: string;
+  price_change_6h: string;
+  symbol: string;
+  token_address: string;
 }
 
 export interface TrendingResponse {
