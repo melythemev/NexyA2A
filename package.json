@@ -1,0 +1,45 @@
+{
+  "name": "@modelcontextprotocol/nexy-mcp",
+  "version": "0.6.2",
+  "description": "MCP server for using the GitHub API",
+  "license": "MIT",
+  "author": "Anthropic, PBC (https://anthropic.com)",
+  "homepage": "https://modelcontextprotocol.io",
+  "bugs": "https://github.com/modelcontextprotocol/servers/issues",
+  "type": "module",
+  "bin": {
+    "nexy-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "@solana-agent-kit/plugin-token": "^2.0.2",
+    "@solana/spl-token": "^0.4.13",
+    "@types/node": "^22",
+    "@types/node-fetch": "^2.6.12",
+    "axios": "^1.8.4",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "js-yaml": "^4.1.0",
+    "nanoid": "^5.1.5",
+    "node-fetch": "^3.3.2",
+    "solana-agent-kit": "^2.0.2",
+    "universal-user-agent": "^7.0.2",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.23.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/js-yaml": "^4.0.9",
+    "shx": "^0.3.4",
+    "typescript": "^5.6.2"
+  }
+}
